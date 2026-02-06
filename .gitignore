@@ -44,10 +44,6 @@ htmlcov/
 samples/
 outputs/
 results/
-*.mp4
-*.png
-*.jpg
-*.jpeg
 
 # Logs
 *.log
