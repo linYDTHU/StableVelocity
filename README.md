@@ -136,9 +136,9 @@ In the low-variance regime, the probability flow dynamics admit **closed-form si
     <th>UniPC (11) + StableVS (9)</th>
   </tr>
   <tr>
-    <td><video src="assets/videos/boxing_unipc_30steps.mp4" width="240" autoplay loop muted playsinline onloadedmetadata="this.playbackRate=0.2;"> </video></td>
-    <td><video src="assets/videos/boxing_unipc_20steps.mp4" width="240" autoplay loop muted playsinline onloadedmetadata="this.playbackRate=0.2;"> </video></td>
-    <td><video src="assets/videos/boxing_stablevs_20steps.mp4" width="240" autoplay loop muted playsinline onloadedmetadata="this.playbackRate=0.2;"> </video></td>
+    <td><img src="assets/gifs/boxing_unipc_30steps.gif" width="240"></td>
+    <td><img src="assets/gifs/boxing_unipc_20steps.gif" width="240"></td>
+    <td><img src="assets/gifs/boxing_stablevs_20steps.gif" width="240"></td>
   </tr>
 </table>
 
@@ -151,9 +151,9 @@ In the low-variance regime, the probability flow dynamics admit **closed-form si
     <th>UniPC (11) + StableVS (9)</th>
   </tr>
   <tr>
-    <td><video src="assets/videos/horse_jump_unipc_30steps.mp4" width="240" autoplay loop muted playsinline onloadedmetadata="this.playbackRate=0.2;"> </video></td>
-    <td><video src="assets/videos/horse_jump_unipc_20steps.mp4" width="240" autoplay loop muted playsinline onloadedmetadata="this.playbackRate=0.2;"> </video></td>
-    <td><video src="assets/videos/horse_jump_stablevs_20steps.mp4" width="240" autoplay loop muted playsinline onloadedmetadata="this.playbackRate=0.2;"> </video></td>
+    <td><img src="assets/gifs/horse_jump_unipc_30steps.gif" width="240"></td>
+    <td><img src="assets/gifs/horse_jump_unipc_20steps.gif" width="240"></td>
+    <td><img src="assets/gifs/horse_jump_stablevs_20steps.gif" width="240"></td>
   </tr>
 </table>
 
