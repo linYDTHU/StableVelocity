@@ -4,7 +4,6 @@
   <a href="https://arxiv.org/abs/2602.05435">
     <img src="https://img.shields.io/badge/arXiv-2602.05435-b31b1b.svg" alt="arXiv">
   </a>
-  &nbsp;
   <img src="https://visitor-badge.laobi.icu/badge?page_id=linydthu.StableVelocity" alt="visitors">
 </p>
 
@@ -115,13 +114,13 @@ In the low-variance regime, the probability flow dynamics admit **closed-form si
 <table align="center">
   <tr>
     <th>Euler (30 steps)</th>
-    <th>Euler (20 steps)</th>
-    <th>Euler (11) + StableVS (9)</th>
+    <th>Euler (17 steps)</th>
+    <th>Euler (8) + StableVS (9)</th>
   </tr>
   <tr>
     <td><img src="assets/images/qwen_euler_30steps.jpg" width="240"></td>
-    <td><img src="assets/images/qwen_euler_20steps.jpg" width="240"></td>
-    <td><img src="assets/images/qwen_stablevs_20steps.jpg" width="240"></td>
+    <td><img src="assets/images/qwen_euler_17steps.jpg" width="240"></td>
+    <td><img src="assets/images/qwen_stablevs_17steps.jpg" width="240"></td>
   </tr>
 </table>
 
@@ -157,6 +156,35 @@ In the low-variance regime, the probability flow dynamics admit **closed-form si
   </tr>
 </table>
 
+
+## ⚡ Quick Start (StableVM & VA-REPA)
+
+```bash
+cd StableVM
+conda create -n stablevm python=3.12 -y
+conda activate stablevm
+pip install -r requirements.txt
+```
+
+**Training** — Launch StableVM + VA-REPA:
+
+```bash
+accelerate launch train.py --model=SiT-XL/2 --data-dir=/path/to/data \
+    --loss-type=stablevm --bank-capacity-per-class=256 --prefill-bank-fully \
+    --use-proj-loss --proj-weight-schedule=sigmoid --proj-tau=0.7 \
+    --allow-tf32 --mixed-precision=fp16
+```
+
+**Evaluation** — Generate 50K samples for FID:
+
+```bash
+torchrun --nnodes=1 --nproc_per_node=4 generate.py --model SiT-XL/2 \
+    --ckpt /path/to/checkpoint.pt --num-fid-samples 50000 --use-projector \
+    --mode=sde --num-steps=250 --cfg-scale=1.8 --guidance-high=0.7
+```
+
+📖 For the full list of options, toy GMM experiments, and more details, see the [StableVM README](StableVM/).
+
 ## 📚 Citation
 
 If you find our paper or code useful, please consider citing our paper:
@@ -175,7 +203,7 @@ If you find our paper or code useful, please consider citing our paper:
 
 ## ✅ Checklist
 
-- [ ] StableVM and VA-REPA code release
+- [x] ~~StableVM and VA-REPA code release~~
 - [ ] Model checkpoints for StableVM and VA-REPA
 - [ ] StableVS code release
 - [ ] Blog release
