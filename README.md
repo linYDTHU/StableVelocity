@@ -4,6 +4,7 @@
   <a href="https://arxiv.org/abs/2602.05435">
     <img src="https://img.shields.io/badge/arXiv-2602.05435-b31b1b.svg" alt="arXiv">
   </a>
+  &nbsp;
   <img src="https://visitor-badge.laobi.icu/badge?page_id=linydthu.StableVelocity" alt="visitors">
 </p>
 
@@ -185,6 +186,57 @@ torchrun --nnodes=1 --nproc_per_node=4 generate.py --model SiT-XL/2 \
 
 📖 For the full list of options, toy GMM experiments, and more details, see the [StableVM README](StableVM/).
 
+## ⚡ Quick Start (StableVS)
+
+StableVS provides drop-in custom schedulers for the [diffusers](https://github.com/huggingface/diffusers) library, enabling **finetuning-free** accelerated sampling on pretrained models.
+
+```bash
+cd StableVS
+conda create -n stablevs python=3.10 -y
+conda activate stablevs
+
+# Install PyTorch (adjust cu121 to match your CUDA version)
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
+
+# Install diffusers and StableVS
+pip install "diffusers[test]"
+pip install -e .
+```
+
+**Basic Usage** — Replace the scheduler in any diffusers pipeline:
+
+```python
+import torch
+from stablevs import StableVSFlowMatchScheduler
+from diffusers import FluxPipeline
+
+pipe = FluxPipeline.from_pretrained("black-forest-labs/FLUX.1-dev", torch_dtype=torch.bfloat16)
+pipe.scheduler = StableVSFlowMatchScheduler(
+    num_train_timesteps=1000,
+    use_fast_low_schedule=True,
+    fast_low_split_point=0.85,
+    fast_low_low_substeps=9,
+    low_region_noise_factor=0.0,
+)
+image = pipe("a beautiful landscape", num_inference_steps=30, guidance_scale=3.5).images[0]
+```
+
+**Quick Demos** — Compare baseline vs StableVS schedulers:
+
+```bash
+# Text-to-Image (SD3.5, Flux, Qwen-Image)
+python examples/t2i_demo.py --models sd35,flux,qwen --output-dir ./figures
+
+# Text-to-Video (Wan2.2)
+python examples/t2v_demo.py --output-dir ./videos
+
+# Print sigma schedules only (no GPU needed)
+python examples/t2i_demo.py --print-sigmas-only
+python examples/t2v_demo.py --print-sigmas-only
+```
+
+📖 For the full list of supported schedulers, benchmark scripts, and parameter details, see the [StableVS README](StableVS/).
+
 ## 📚 Citation
 
 If you find our paper or code useful, please consider citing our paper:
@@ -205,7 +257,7 @@ If you find our paper or code useful, please consider citing our paper:
 
 - [x] ~~StableVM and VA-REPA code release~~
 - [ ] Model checkpoints for StableVM and VA-REPA
-- [ ] StableVS code release
+- [x] ~~StableVS code release~~
 - [ ] Blog release
 
 ## 👨🏻‍💻 Contact
