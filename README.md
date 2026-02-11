@@ -10,8 +10,8 @@
 
 <p align="center">
   <a href="https://linydthu.github.io/" target="_blank">Donglin&nbsp;Yang</a><sup>1,3</sup> &ensp; <b>&middot;</b> &ensp;
-  <a href="https://scholar.google.com/citations?user=dFsd0owAAAAJ&hl=en" target="_blank">Yongxing&nbsp;Zhang</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
-  <a href="https://xinyu-andy.github.io/" target="_blank">Xin&nbsp;Yu</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
+  <a href="https://scholar.google.com/citations?user=dFsd0owAAAAJ&hl=en" target="_blank">Yongxing&nbsp;Zhang</a><sup>2</sup> &ensp; <b>&middot;</b> &ensp;
+  <a href="https://xinyu-andy.github.io/" target="_blank">Xin&nbsp;Yu</a><sup>1</sup> &ensp; <b>&middot;</b> &ensp;
   <a href="https://liang-hou.github.io/" target="_blank">Liang&nbsp;Hou</a><sup>3</sup>
   <br>
   <a href="https://www.xtao.website/" target="_blank">Xin&nbsp;Tao</a><sup>3</sup> &ensp; <b>&middot;</b> &ensp;
