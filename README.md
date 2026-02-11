@@ -22,6 +22,8 @@
   <sup>1</sup> HKU &emsp; <sup>2</sup> UBC &emsp; <sup>3</sup> Kling Team, Kuaishou Technology
 </p>
 
+<h3 align="center">[<a href="https://linydthu.github.io/StableVelocity/">project page</a>]&emsp;[<a href="https://arxiv.org/abs/2602.05435">arXiv</a>]</h3>
+
 ---
 
 > **Summary** &mdash; By explicitly characterizing the variance of flow matching, we identify 1) a *high-variance regime* near the prior, where optimization is challenging, and 2) a *low-variance regime* near the data distribution, where conditional and marginal velocities nearly coincide. Leveraging this insight, we propose **Stable Velocity**, a unified framework that improves both training and sampling. For training, we introduce Stable Velocity Matching (StableVM), an unbiased variance-reduction objective, along with Variance-Aware Representation Alignment (VA-REPA), which adaptively strengthen auxiliary supervision in the *low-variance regime*. For inference, we show that dynamics in the *low-variance regime* admit closed-form simplifications, enabling Stable Velocity Sampling (StableVS), a finetuning-free acceleration.
@@ -258,7 +260,7 @@ If you find our paper or code useful, please consider citing our paper:
 - [x] ~~StableVM and VA-REPA code release~~
 - [ ] Model checkpoints for StableVM and VA-REPA
 - [x] ~~StableVS code release~~
-- [ ] Blog release
+- [x] ~~Project page release~~
 
 ## 👨🏻‍💻 Contact
 
